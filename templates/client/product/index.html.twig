@@ -1,644 +1,545 @@
-
-
-    {% for category in categories %}
-        <tr>
-
-            <td>{{ category.id }}</td>
-            <td>{{ category.name }}</td>
-            <td>{{ category.gender }}</td>
-
-        </tr>
-    {% else %}
-        <tr>
-            <td colspan="4">no records found</td>
-        </tr>
-    {% endfor %}
-
-
-
-
-    <!doctype html>
-    <html lang=ru>
-    <head>
-        <meta charset=utf-8>
-        <title></title>
-        <!--[if IE]>
-        <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="javascripts/html5.js"></script>
-        <![endif]-->
-        <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="javascripts/jquery.js"></script>
-        <script type="text/javascript" src="javascripts/modernizr.js"></script>
-        <script type="text/javascript" src="javascripts/selectivizr.js"></script>
-        <script type="text/javascript" src="javascripts/main.js"></script>
-    </head>
-    <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="content">
-                <a href="#" class="logo"></a>
-                <table class="header_contacts">
-                    <tr>
-                        <td class="key">
-                            Тел.:
-                        </td>
-                        <td class="val">
-                            (017) 286-30-71, 286-31-72
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="key">
-                            Факс:
-                        </td>
-                        <td class="val">
-                            (017) 286-31-72
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="key">
-                            E-mail:
-                        </td>
-                        <td class="val">
-                            info@temptation.by
-                        </td>
-                    </tr>
-                </table>
-                <div class="cart_widget">
-                    <a href="#" class="cart_link"></a>
-                    <div class="cart_info">
-                        <div class="label">
-                            В корзине:
-                        </div>
-                        <div class="value">
-                            2 товара
-                            <br>
-                            1 400 000 р.
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfloat"></div>
-            </div>
-        </header>
-        <nav class="main_nav content">
-            <a href="#" class="catalog_link">
-                КАТАЛОГ
-            </a>
-            <a href="#">
-                НОВОСТИ
-            </a>
-            <a href="#">
-                НАШИ МАГАЗИНЫ
-            </a>
-            <a href="#">
-                СОТРУДНИЧЕСТВО
-            </a>
-            <a href="#">
-                О КОМПАНИИ
-            </a>
-        </nav>
-        <div class="page_with_side content">
-            <div class="side">
-                <form action="ajax/filter.php" class="filter_form"></form>
-                <div class="sex_changer">
-                    <span class="link active">
-                        ДЛЯ НЕЕ
-                    </span>
-                    <a href="#" class="link">
-                        ДЛЯ НЕГО
-                    </a>
-                    <div class="clearfloat"></div>
-                </div>
-                <nav class="categorys">
-                    <span class="category_link active">
-                        БЮСТАЛЬТЕРЫ
-                    </span>
-                    <ul class="inner_list">
-                        <li>
-                            <span class="check_element multi_filter" data-name="bust[]" data-id="1">
-                                T-Shirt
-                            </span>
-                        </li>
-                        <li>
-                            <span class="check_element multi_filter" data-name="bust[]" data-id="2">
-                                Push-up
-                            </span>
-                        </li>
-                        <li>
-                            <span class="check_element multi_filter" data-name="bust[]" data-id="3">
-                                Bandeau
-                            </span>
-                        </li>
-                        <li>
-                            <span class="check_element multi_filter" data-name="bust[]" data-id="4">
-                                С мягкой чашкой
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ТРУСЫ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        НОЧНЫЕ СОРОЧКИ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ПЕНЬЮАРЫ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ГРАЦИИ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ПИЖАМЫ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ФУТБОЛКИ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        МАЙКИ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        БРЮКИ ДОМАШНИЕ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        КОРСЕТЫ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ПОДВЯЗКИ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        КУПАЛЬНИК
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ПЛЯЖНАЯ ОДЕЖДА
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ШОРТЫ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        ЖАКЕТЫ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        КОЛГОТКИ, ЧУЛКИ,
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        НОСКИ
-                    </a>
-                    <div class="clearfloat"></div>
-                    <a href="#" class="category_link">
-                        АКСЕССУАРЫ
-                    </a>
-                </nav>
-                <div class="separator"></div>
-                <div class="brands">
-                    <div class="title_block">
-                        БРЕНДЫ
-                    </div>
-                    <ul class="inner_list">
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="100">
-                                Infinity Lingerie
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="101">
-                                Purple
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="102">
-                                Pure
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="103">
-                                Silver
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="104">
-                                Basic
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="105">
-                                Men
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter" data-name="brand[]" data-id="106">
-                                Swimwear
-                            </span>
-                        </li>
-                        <li>
-                			<span class="check_element multi_filter">
-                                Kiss
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="clearfloat"></div>
-            </div>
-            <div class="products">
-                <div class="item_sort">
+<!doctype html>
+<html lang=ru>
+<head>
+    <meta charset=utf-8>
+    <title></title>
+    <!--[if IE]>
+    <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="javascripts/html5.js"></script>
+    <![endif]-->
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="javascripts/selectivizr.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="content">
+            <a href="#" class="logo"></a>
+            <table class="header_contacts">
+                <tr>
+                    <td class="key">
+                        Тел.:
+                    </td>
+                    <td class="val">
+                        (017) 286-30-71, 286-31-72
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">
+                        Факс:
+                    </td>
+                    <td class="val">
+                        (017) 286-31-72
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">
+                        E-mail:
+                    </td>
+                    <td class="val">
+                        info@temptation.by
+                    </td>
+                </tr>
+            </table>
+            <div class="cart_widget">
+                <a href="#" class="cart_link"></a>
+                <div class="cart_info">
                     <div class="label">
-                        Сортировать по:
+                        В корзине:
                     </div>
-                    <div class="select_list">
-                        <div class="current">
-                            Дате поступления
-                        </div>
-                        <ul class="list">
-                            <li class="single_filter" data-name="sort" data-id="31">
-                                Цене
-                            </li>
-                            <li class="single_filter" data-name="sort" data-id="32">
-                                Важности
-                            </li>
-                            <li class="single_filter" data-name="sort" data-id="33">
-                                Заслугам
-                            </li>
-                        </ul>
+                    <div class="value">
+                        2 товара
+                        <br>
+                        1 400 000 р.
                     </div>
                 </div>
-                <div class="item_sort">
-                    <div class="label">
-                        Размер:
-                    </div>
-                    <div class="select_list">
-                        <div class="current">
-                            2B
-                        </div>
-                        <ul class="list">
-                            <li>
-								<span class="check_element multi_filter" data-name="size" data-id="21">
-                                	2A
-                            	</span>
-                            </li>
-                            <li>
-								<span class="check_element multi_filter" data-name="size" data-id="22">
-                                	2B
-                            	</span>
-                            </li>
-                            <li>
-								<span class="check_element multi_filter" data-name="size" data-id="23">
-                                	2C
-                            	</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="clearfloat"></div>
-                <div class="products_list">
-                    <div class="sort_result">
-                        Найдено товаров: <span>49</span>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget last_in_line">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget last_in_line">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget last_in_line">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="product_widget last_in_line">
-                        <a href="" class="image">
-                            <img src="images/uploads/product_widget_img.jpg" alt="">
-                        </a>
-                        <a href="#" class="name">
-                            Корсет Красивый
-                        </a>
-                        <div class="clearfloat"></div>
-                        <div class="price">
-                            40 000 р.
-                        </div>
-                        <div class="old_price">
-                            50 000 р.
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                    <div class="clearfloat"></div>
-                    <ul class="pagination" data-name="pagination">
-                        <li>
-                            <a href="#" class="link" data-value="1">
-                                1
-                            </a>
-                        </li>
-                        <li>
-							<span class="link active" data-value="2">
-								2
-							</span>
-                        </li>
-                        <li>
-                            <a href="#" class="link" data-value="3">
-                                3
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="link" data-value="4">
-                                4
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="link" data-value="5">
-                                5
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="link" data-value="6">
-                                Все
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="clearfloat"></div>
-                </div>
+            </div>
+            <div class="clearfloat"></div>
+        </div>
+    </header>
+    <nav class="main_nav content">
+        <a href="#" class="catalog_link">
+            КАТАЛОГ
+        </a>
+        <a href="#">
+            НОВОСТИ
+        </a>
+        <a href="#">
+            НАШИ МАГАЗИНЫ
+        </a>
+        <a href="#">
+            СОТРУДНИЧЕСТВО
+        </a>
+        <a href="#">
+            О КОМПАНИИ
+        </a>
+    </nav>
+    <div class="page_with_side content">
+        <div class="side">
+            <form action="ajax/filter.php" class="filter_form"></form>
+            <div class="sex_changer">
+                <span class="link active">
+                    ДЛЯ НЕЕ
+                </span>
+                <a href="#" class="link">
+                    ДЛЯ НЕГО
+                </a>
                 <div class="clearfloat"></div>
             </div>
+            <nav class="categorys">
+{#                <span class="category_link active">#}
+{#                    БЮСТАЛЬТЕРЫ#}
+{#                </span>#}
+{#                #}
+{#                <div class="clearfloat"></div>#}
+
+                {% for category in categories %}
+                    <a href="#{{ category.id }}" class="category_link">
+                        {{ category.name }}
+                    </a>
+                    <div class="clearfloat"></div>
+                {% endfor %}
+
+            </nav>
+            <div class="separator"></div>
+            <div class="brands">
+                <div class="title_block">
+                    БРЕНДЫ
+                </div>
+                <ul class="inner_list">
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="100">
+                            Infinity Lingerie
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="101">
+                            Purple
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="102">
+                            Pure
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="103">
+                            Silver
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="104">
+                            Basic
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="105">
+                            Men
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter" data-name="brand[]" data-id="106">
+                            Swimwear
+                        </span>
+                    </li>
+                    <li>
+                        <span class="check_element multi_filter">
+                            Kiss
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfloat"></div>
+        </div>
+        <div class="products">
+            <div class="item_sort">
+                <div class="label">
+                    Сортировать по:
+                </div>
+                <div class="select_list">
+                    <div class="current">
+                        Дате поступления
+                    </div>
+                    <ul class="list">
+                        <li class="single_filter" data-name="sort" data-id="31">
+                            Цене
+                        </li>
+                        <li class="single_filter" data-name="sort" data-id="32">
+                            Важности
+                        </li>
+                        <li class="single_filter" data-name="sort" data-id="33">
+                            Заслугам
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item_sort">
+                <div class="label">
+                    Размер:
+                </div>
+                <div class="select_list">
+                    <div class="current">
+                        2B
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <span class="check_element multi_filter" data-name="size" data-id="21">
+                                2A
+                            </span>
+                        </li>
+                        <li>
+                            <span class="check_element multi_filter" data-name="size" data-id="22">
+                                2B
+                            </span>
+                        </li>
+                        <li>
+                            <span class="check_element multi_filter" data-name="size" data-id="23">
+                                2C
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfloat"></div>
+            <div class="products_list">
+                <div class="sort_result">
+                    Найдено товаров: <span>49</span>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget last_in_line">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget last_in_line">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget last_in_line">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="product_widget last_in_line">
+                    <a href="" class="image">
+                        <img src="images/uploads/product_widget_img.jpg" alt="">
+                    </a>
+                    <a href="#" class="name">
+                        Корсет Красивый
+                    </a>
+                    <div class="clearfloat"></div>
+                    <div class="price">
+                        40 000 р.
+                    </div>
+                    <div class="old_price">
+                        50 000 р.
+                    </div>
+                    <div class="clearfloat"></div>
+                </div>
+                <div class="clearfloat"></div>
+                <ul class="pagination" data-name="pagination">
+                    <li>
+                        <a href="#" class="link" data-value="1">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <span class="link active" data-value="2">
+                            2
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#" class="link" data-value="3">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" data-value="4">
+                            4
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" data-value="5">
+                            5
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" data-value="6">
+                            Все
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfloat"></div>
+            </div>
+            <div class="clearfloat"></div>
         </div>
     </div>
-    <div class="footer_wr">
-        <footer class="footer content">
-            <div class="logo_copyright">
-                <a href="#" class="logo_footer"></a>
-                <div class="clearfloat"></div>
-                <div class="copyright">
-                    © 2014 Temptation
-                </div>
+</div>
+<div class="footer_wr">
+    <footer class="footer content">
+        <div class="logo_copyright">
+            <a href="#" class="logo_footer"></a>
+            <div class="clearfloat"></div>
+            <div class="copyright">
+                © 2014 Temptation
             </div>
-            <div class="footer_block">
-                <div class="label">
-                    О НАС
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">
-                            О компании
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Наши магазины
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Вакансии
-                        </a>
-                    </li>
-                </ul>
+        </div>
+        <div class="footer_block">
+            <div class="label">
+                О НАС
             </div>
-            <div class="footer_block">
-                <div class="label">
-                    ПОКУПАТЕЛЯМ
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">
-                            Новости
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Как не быть обманутым
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Нужно знать
-                        </a>
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <a href="#">
+                        О компании
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Наши магазины
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_block">
+            <div class="label">
+                ПОКУПАТЕЛЯМ
             </div>
-            <div class="footer_block">
-                <div class="label">
-                    ОПТОВИКАМ
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">
-                            Сотрудничество
-                        </a>
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <a href="#">
+                        Новости
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Как не быть обманутым
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Нужно знать
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_block">
+            <div class="label">
+                ОПТОВИКАМ
             </div>
-            <div class="footer_block last">
-                <div class="label">
-                    КОНТАКТЫ
-                </div>
-                <table class="footer_contacts">
-                    <tr>
-                        <td class="key">
-                            Тел.:
-                        </td>
-                        <td class="val">
-                            (017) 286-30-71, 286-31-72
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="key">
-                            Факс:
-                        </td>
-                        <td class="val">
-                            (017) 286-31-72
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="key">
-                            E-mail:
-                        </td>
-                        <td class="val">
-                            info@temptation.by
-                        </td>
-                    </tr>
-                </table>
-                <a href="#">
-                    Обратная свзяь
-                </a>
+            <ul>
+                <li>
+                    <a href="#">
+                        Сотрудничество
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_block last">
+            <div class="label">
+                КОНТАКТЫ
             </div>
-        </footer>
-    </div>
-    </body>
-    </html>
+            <table class="footer_contacts">
+                <tr>
+                    <td class="key">
+                        Тел.:
+                    </td>
+                    <td class="val">
+                        (017) 286-30-71, 286-31-72
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">
+                        Факс:
+                    </td>
+                    <td class="val">
+                        (017) 286-31-72
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">
+                        E-mail:
+                    </td>
+                    <td class="val">
+                        info@temptation.by
+                    </td>
+                </tr>
+            </table>
+            <a href="#">
+                Обратная свзяь
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
 
