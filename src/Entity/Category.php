@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
+ * @ORM\Table("categories")
  */
 class Category
 {
@@ -46,10 +47,18 @@ class Category
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name): void
     {
         $this->name = $name;
+    }
 
-        return $this;
+    public function getGender(): ?int
+    {
+        return $this->gender;
+    }
+
+    public function setGender(int $gender): void
+    {
+        $this->gender = $gender;
     }
 }
