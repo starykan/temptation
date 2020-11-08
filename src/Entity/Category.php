@@ -63,4 +63,9 @@ class Category
     {
         $this->gender = $gender;
     }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }

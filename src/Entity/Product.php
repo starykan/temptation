@@ -9,7 +9,7 @@ use App\Repository\ProductRepository;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
- * @ORM\Table("categories")
+ * @ORM\Table("products")
  */
 class Product
 {

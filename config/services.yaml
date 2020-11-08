@@ -29,3 +29,8 @@ services:
     App\Repository\CategoryRepository:
         class: App\Repository\CategoryRepository
         arguments: ['@Doctrine\Persistence\ManagerRegistry']
+
+    App\Repository\ProductRepository:
+        class: App\Repository\ProductRepository
+        arguments: [ '@Doctrine\Persistence\ManagerRegistry' ]
+
