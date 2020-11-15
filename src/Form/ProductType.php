@@ -18,7 +18,7 @@ class ProductType extends AbstractType
             ->add('fullPrice')
             ->add('content')
             ->add('category')
-            ->add('images', FileType::class, [
+            ->add('uploadedImages', FileType::class, [
                 'multiple' => true,
                 'attr' => [
                     'accept' => 'image/*',

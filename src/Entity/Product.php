@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -60,9 +61,16 @@ class Product
     private $content;
 
     /**
-     * @var UploadedFile[]
+     * @var ProductImage[]
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductImage", mappedBy="product")
      */
     private $images;
+
+    /**
+     * @var UploadedFile[]
+     */
+    private $uploadedImages;
 
     public function getId(): ?int
     {
@@ -121,21 +129,29 @@ class Product
         $this->content = $content;
     }
 
-    public function setImages(array $images): void
+    /**
+     * @return ProductImage[]|Collection
+     */
+    public function getImages(): Collection
     {
-        $this->images = $images;
+        return $this->images;
+    }
+
+    public function setUploadedImages(array $uploadedImages): void
+    {
+        $this->uploadedImages = $uploadedImages;
     }
 
     /**
      * @return UploadedFile[]
      */
-    public function getImages(): array
+    public function getUploadedImages(): array
     {
-        return $this->images ?: [];
+        return $this->uploadedImages ?: [];
     }
 
-    public function addImage(UploadedFile $image): void
+    public function addUploadedImage(UploadedFile $image): void
     {
-        $this->images[] = $image;
+        $this->uploadedImages[] = $image;
     }
 }

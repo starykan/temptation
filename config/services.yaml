@@ -36,6 +36,7 @@ services:
 
     App\Manager\ProductManager:
         class: App\Manager\ProductManager
-        arguments: ['@Doctrine\Persistence\ObjectManager']
-
-#'%kernel.root_dir%/public/uploads/products'
+        arguments:
+            - '@Doctrine\ORM\EntityManagerInterface'
+            - '@Symfony\Component\Routing\RouterInterface'
+            - '%kernel.project_dir%/public/uploads'
