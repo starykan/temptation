@@ -34,3 +34,8 @@ services:
         class: App\Repository\ProductRepository
         arguments: [ '@Doctrine\Persistence\ManagerRegistry' ]
 
+    App\Manager\ProductManager:
+        class: App\Manager\ProductManager
+        arguments: ['@Doctrine\Persistence\ObjectManager']
+
+#'%kernel.root_dir%/public/uploads/products'

@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use App\Entity\ProductImage;
 use App\Form\ProductType;
+use App\Manager\ProductManager;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,16 +30,13 @@ class ProductController extends AbstractController
     /**
      * @Route("/new", name="admin_product_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, ProductManager $productManager): Response
     {
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($product);
-            $entityManager->flush();
+            $productManager->save($product);
 
             return $this->redirectToRoute('admin_product_index');
         }

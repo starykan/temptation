@@ -6,6 +6,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -57,6 +58,11 @@ class Product
      * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
+
+    /**
+     * @var UploadedFile[]
+     */
+    private $images;
 
     public function getId(): ?int
     {
@@ -115,6 +121,21 @@ class Product
         $this->content = $content;
     }
 
+    public function setImages(array $images): void
+    {
+        $this->images = $images;
+    }
 
+    /**
+     * @return UploadedFile[]
+     */
+    public function getImages(): array
+    {
+        return $this->images ?: [];
+    }
 
+    public function addImage(UploadedFile $image): void
+    {
+        $this->images[] = $image;
+    }
 }
