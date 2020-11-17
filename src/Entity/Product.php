@@ -72,6 +72,14 @@ class Product
      */
     private $uploadedImages;
 
+    /**
+     * @var ProductImage
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\ProductImage")
+     * @ORM\JoinColumn(name="main_image_hash", referencedColumnName="image_hash")
+     */
+    private $mainImage;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,4 +162,17 @@ class Product
     {
         $this->uploadedImages[] = $image;
     }
+
+    public function getMainImage(): ?ProductImage
+    {
+        return $this->mainImage;
+    }
+
+    public function setMainImage(ProductImage $mainImage): void
+    {
+        $this->mainImage = $mainImage;
+    }
+
+
+
 }

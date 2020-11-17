@@ -43,6 +43,9 @@ class ProductManager
             $imageEntity->setProduct($product);
             $imageEntity->setImageHash(uniqid());
             $this->entityManager->persist($imageEntity);
+            if (!$product->getMainImage()) {
+                $product->setMainImage($imageEntity);
+            }
             $targetDir = $this->uploadsDir . '/products/' . $product->getId() . '/full';
             if (!is_dir($targetDir)) {
                 mkdir($targetDir, 0777, true);
