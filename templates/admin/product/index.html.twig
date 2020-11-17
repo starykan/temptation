@@ -9,6 +9,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Price</th>
@@ -20,6 +21,11 @@
         <tbody>
         {% for product in products %}
             <tr>
+                <td>
+                    {% if product.getMainImage() %}
+                        <img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" />
+                    {% endif %}
+                </td>
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>

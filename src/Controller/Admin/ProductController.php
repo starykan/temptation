@@ -20,10 +20,12 @@ class ProductController extends AbstractController
     /**
      * @Route("/", name="admin_product_index", methods={"GET"})
      */
-    public function index(ProductRepository $productRepository): Response
+    public function index(ProductRepository $productRepository, ProductManager $productManager): Response
     {
         return $this->render('admin/product/index.html.twig', [
             'products' => $productRepository->findAll(),
+            'productManager' => $productManager,
+
         ]);
     }
 
