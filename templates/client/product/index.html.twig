@@ -104,54 +104,7 @@
                 {% endfor %}
 
             </nav>
-            <div class="separator"></div>
-            <div class="brands">
-                <div class="title_block">
-                    БРЕНДЫ
-                </div>
-                <ul class="inner_list">
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="100">
-                            Infinity Lingerie
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="101">
-                            Purple
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="102">
-                            Pure
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="103">
-                            Silver
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="104">
-                            Basic
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="105">
-                            Men
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter" data-name="brand[]" data-id="106">
-                            Swimwear
-                        </span>
-                    </li>
-                    <li>
-                        <span class="check_element multi_filter">
-                            Kiss
-                        </span>
-                    </li>
-                </ul>
-            </div>
+
             <div class="clearfloat"></div>
         </div>
         <div class="products">
@@ -208,198 +161,28 @@
                 <div class="sort_result">
                     Найдено товаров: <span>49</span>
                 </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
+                {% for product in products %}
+                    <div class="product_widget{% if loop.index % 3 == 0 %} last_in_line{% endif %}">
+                        <a href="" class="image">
+                            {% if product.getMainImage() %}
+                                <img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" />
+                            {% endif %}
+                        </a>
+                        <a href="#" class="name">
+                            {{ product.name }}
+                        </a>
+                        <div class="clearfloat"></div>
+                        <div class="price">
+                            {{ product.price }} р.
+                        </div>
+                        {% if product.fullPrice != 0 %}
+                            <div class="old_price">
+                                {{ product.fullPrice }} р.
+                            </div>
+                        {% endif %}
+                        <div class="clearfloat"></div>
                     </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget last_in_line">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget last_in_line">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget last_in_line">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
-                <div class="product_widget last_in_line">
-                    <a href="" class="image">
-                        <img src="images/uploads/product_widget_img.jpg" alt="">
-                    </a>
-                    <a href="#" class="name">
-                        Корсет Красивый
-                    </a>
-                    <div class="clearfloat"></div>
-                    <div class="price">
-                        40 000 р.
-                    </div>
-                    <div class="old_price">
-                        50 000 р.
-                    </div>
-                    <div class="clearfloat"></div>
-                </div>
+                {% endfor %}
                 <div class="clearfloat"></div>
                 <ul class="pagination" data-name="pagination">
                     <li>
