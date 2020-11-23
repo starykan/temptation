@@ -18,10 +18,8 @@ class CatalogController extends AbstractController
      */
     public function index(CategoryRepository $categoryRepository, ProductRepository $productRepository, ProductManager $productManager): Response
     {
-        return $this->render('client/catalog/index.html.twig', [
-            'categories' => $categoryRepository->findAll(),
-            'products' => $productRepository->findAll(),
-            'productManager' => $productManager,
+        return $this->redirectToRoute('client_catalog_category', [
+            'categoryId' => $categoryRepository->findFirstCategory()->getId(),
         ]);
     }
 
