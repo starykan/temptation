@@ -4,14 +4,14 @@
     <meta charset=utf-8>
     <title></title>
     <!--[if IE]>
-    <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="javascripts/html5.js"></script>
+    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/javascripts/html5.js"></script>
     <![endif]-->
-    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="javascripts/jquery.js"></script>
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="javascripts/selectivizr.js"></script>
-    <script type="text/javascript" src="javascripts/main.js"></script>
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="/javascripts/selectivizr.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -90,16 +90,17 @@
                 <div class="clearfloat"></div>
             </div>
             <nav class="categorys">
-{#                <span class="category_link active">#}
-{#                    БЮСТАЛЬТЕРЫ#}
-{#                </span>#}
-{#                #}
-{#                <div class="clearfloat"></div>#}
 
                 {% for category in categories %}
-                    <a href="#{{ category.id }}" class="category_link">
-                        {{ category.name }}
-                    </a>
+                    {% if activeCategory.id != category.id %}
+                        <a href="{{ path('client_catalog_category', {'categoryId': category.id}) }}" class="category_link">
+                            {{ category.name }}
+                        </a>
+                    {% else %}
+                        <span class="category_link active">
+                            {{ category.name }}
+                        </span>
+                    {% endif%}
                     <div class="clearfloat"></div>
                 {% endfor %}
 
@@ -107,7 +108,7 @@
 
             <div class="clearfloat"></div>
         </div>
-        <div class="products">
+        <div class="products" id="test">
             <div class="item_sort">
                 <div class="label">
                     Сортировать по:
