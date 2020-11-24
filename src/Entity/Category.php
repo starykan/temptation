@@ -13,8 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
-    private const GENDER_MALE = 1;
-    private const GENDER_FEMALE = 2;
+    public const GENDER_MALE = 1;
+    public const GENDER_FEMALE = 2;
 
     /**
      * @var int

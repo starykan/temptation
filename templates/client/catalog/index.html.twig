@@ -61,7 +61,7 @@
         </div>
     </header>
     <nav class="main_nav content">
-        <a href="#" class="catalog_link">
+        <a href="{{ path('client_catalog_index') }}" class="catalog_link">
             КАТАЛОГ
         </a>
         <a href="#">
@@ -81,12 +81,25 @@
         <div class="side">
             <form action="ajax/filter.php" class="filter_form"></form>
             <div class="sex_changer">
-                <span class="link active">
-                    ДЛЯ НЕЕ
-                </span>
-                <a href="#" class="link">
-                    ДЛЯ НЕГО
-                </a>
+                {% if GENDER_FEMALE == activeCategory.gender %}
+                    <span class="link active">
+                        ДЛЯ НЕЕ
+                    </span>
+                {% else %}
+                    <a href="{{ path('client_catalog_index', {'gender': GENDER_FEMALE}) }}" class="link">
+                        ДЛЯ НЕЕ
+                    </a>
+                {% endif %}
+
+                {% if GENDER_MALE == activeCategory.gender %}
+                    <span class="link active">
+                        ДЛЯ НЕГО
+                    </span>
+                {% else %}
+                    <a href="{{ path('client_catalog_index', {'gender': GENDER_MALE}) }}" class="link">
+                        ДЛЯ НЕГО
+                    </a>
+                {% endif %}
                 <div class="clearfloat"></div>
             </div>
             <nav class="categorys">
