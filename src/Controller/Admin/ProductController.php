@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/catalog")
+ * @Route("/product")
  */
 class ProductController extends AbstractController
 {
@@ -24,7 +24,7 @@ class ProductController extends AbstractController
      */
     public function index(ProductRepository $productRepository, ProductManager $productManager): Response
     {
-        return $this->render('admin/catalog/index.html.twig', [
+        return $this->render('admin/product/index.html.twig', [
             'products' => $productRepository->findAll(),
             'productManager' => $productManager,
 
@@ -45,8 +45,8 @@ class ProductController extends AbstractController
             return $this->redirectToRoute('admin_product_index');
         }
 
-        return $this->render('admin/catalog/new.html.twig', [
-            'catalog' => $product,
+        return $this->render('admin/product/new.html.twig', [
+            'product' => $product,
             'form' => $form->createView(),
         ]);
     }
@@ -56,8 +56,8 @@ class ProductController extends AbstractController
      */
     public function show(Product $product): Response
     {
-        return $this->render('admin/catalog/show.html.twig', [
-            'catalog' => $product,
+        return $this->render('admin/product/show.html.twig', [
+            'product' => $product,
         ]);
     }
 
@@ -75,8 +75,8 @@ class ProductController extends AbstractController
             return $this->redirectToRoute('admin_product_index');
         }
 
-        return $this->render('admin/catalog/edit.html.twig', [
-            'catalog' => $product,
+        return $this->render('admin/product/edit.html.twig', [
+            'product' => $product,
             'productManager' => $productManager,
             'form' => $form->createView(),
         ]);
