@@ -1,13 +1,16 @@
 {% extends 'admin/admin_base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Продукты{% endblock %}
 
 
 {% block body %}
-    <h1>Product index</h1>
+    <h2 xmlns="http://www.w3.org/1999/html">Продукты</h2>
 
     <table class="table">
         <thead>
+        <style>
+            table, th, td { border: 2px solid black; border-collapse: collapse;max-width: max-content;max-height: max-content; }
+        </style>
             <tr>
                 <th></th>
                 <th>Id</th>
@@ -32,17 +35,17 @@
                 <td>{{ product.fullPrice }}</td>
                 <td>{{ product.content }}</td>
                 <td>
-                    <a href="{{ path('admin_product_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('admin_product_show', {'id': product.id}) }}">Показать</a>
+                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}">Редактировать</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Записи не найдены</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_product_new') }}">Create new</a>
+    <h2><a href="{{ path('admin_product_new') }}">Создать</h2>
 {% endblock %}

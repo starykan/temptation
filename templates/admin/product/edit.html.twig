@@ -4,7 +4,7 @@
 
 
 {% block body %}
-    <h1>Edit Product</h1>
+    <h1>Редактирование продукта</h1>
 
     {% for image in product.getImages() %}
         <img src="{{ productManager.getImageFullUrl(image) }}" />
