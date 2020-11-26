@@ -1,0 +1,17 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}index{% endblock %}
+
+{% block body %}
+        <table class="table">
+        <thead>
+
+        </thead>
+        <tbody>
+        <td>
+            <a href="{{ path('admin_product_index') }}">Продукты</a>
+            <a href="{{ path('admin_category_index') }}">Категории</a>
+        </td>
+        </tbody>
+    </table>
+{% endblock %}
