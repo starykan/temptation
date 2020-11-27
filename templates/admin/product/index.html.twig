@@ -5,7 +5,9 @@
 
 {% block body %}
     <h2 xmlns="http://www.w3.org/1999/html">Продукты</h2>
-
+    <h2>
+        <a href="{{ path('admin_product_new') }}">Создать</a>
+    </h2>
     <table class="table">
         <thead>
         <style>
@@ -15,6 +17,7 @@
                 <th></th>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Category</th>
                 <th>Price</th>
                 <th>FullPrice</th>
                 <th>Content</th>
@@ -26,11 +29,12 @@
             <tr>
                 <td>
                     {% if product.getMainImage() %}
-                        <img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" />
+                        <img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}"/>
                     {% endif %}
                 </td>
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
+                <th>{{ product.category }}</th>
                 <td>{{ product.price }}</td>
                 <td>{{ product.fullPrice }}</td>
                 <td>{{ product.content }}</td>
@@ -47,5 +51,4 @@
         </tbody>
     </table>
 
-    <h2><a href="{{ path('admin_product_new') }}">Создать</h2>
 {% endblock %}
