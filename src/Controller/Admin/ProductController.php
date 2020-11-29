@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
-use App\Entity\ProductImage;
 use App\Form\ProductType;
 use App\Manager\ProductManager;
 use App\Repository\ProductRepository;
