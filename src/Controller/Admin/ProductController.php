@@ -8,6 +8,7 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Manager\ProductManager;
 use App\Repository\ProductRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,10 +22,24 @@ class ProductController extends AbstractController
     /**
      * @Route("/", name="admin_product_index", methods={"GET"})
      */
-    public function index(ProductRepository $productRepository, ProductManager $productManager): Response
+    public function index(
+        ProductRepository $productRepository,
+        ProductManager $productManager,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response
     {
+        $products = $paginator->paginate(
+            // Doctrine Query, not results
+            $productRepository->getFindAllQuery(),
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            5
+        );
+
         return $this->render('admin/product/index.html.twig', [
-            'products' => $productRepository->findAll(),
+            'products' => $products,
             'productManager' => $productManager,
 
         ]);
