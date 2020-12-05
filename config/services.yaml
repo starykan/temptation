@@ -40,3 +40,6 @@ services:
             - '@Doctrine\ORM\EntityManagerInterface'
             - '@Symfony\Component\Routing\RouterInterface'
             - '%kernel.project_dir%/public/uploads'
+
+    App\Security\AdminAuthenticator:
+        class: App\Security\AdminAuthenticator
