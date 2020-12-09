@@ -43,3 +43,7 @@ services:
 
     App\Security\AdminAuthenticator:
         class: App\Security\AdminAuthenticator
+        arguments:
+            - '@Symfony\Component\Routing\Generator\UrlGeneratorInterface'
+            - '@Symfony\Component\Security\Csrf\CsrfTokenManagerInterface'
+            - '@Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface'
