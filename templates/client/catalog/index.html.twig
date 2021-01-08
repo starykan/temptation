@@ -1,49 +1,38 @@
-<!doctype html>
-<html lang=ru>
-<head>
-    <meta charset=utf-8>
-    <title></title>
-    <!--[if IE]>
-    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/javascripts/html5.js"></script>
-    <![endif]-->
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/javascripts/jquery.js"></script>
-    <script type="text/javascript" src="/javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="/javascripts/selectivizr.js"></script>
-    <script type="text/javascript" src="/javascripts/main.js"></script>
-</head>
-<body>
-<div class="wrapper">
-    <header class="header">
-        <div class="content">
-            <a href="{{ path('client_catalog_index') }}" class="logo"></a>
-            <table class="header_contacts">
-                <tr>
-                    <td class="key">
-                        Тел.:
-                    </td>
-                    <td class="val">
-                        (017) 286-30-71, 286-31-72
-                    </td>
-                </tr>
-                <tr>
-                    <td class="key">
-                        Факс:
-                    </td>
-                    <td class="val">
-                        (017) 286-31-72
-                    </td>
-                </tr>
-                <tr>
-                    <td class="key">
-                        E-mail:
-                    </td>
-                    <td class="val">
-                        info@temptation.by
-                    </td>
-                </tr>
-            </table>
+{% extends 'client/client_base.html.twig' %}
+
+{% block title %}Temptation{% endblock %}
+
+{% block body %}
+{#<div class="wrapper">#}
+{#    <header class="header">#}
+{#        <div class="content">#}
+{#            <a href="{{ path('client_catalog_index') }}" class="logo"></a>#}
+{#            <table class="header_contacts">#}
+{#                <tr>#}
+{#                    <td class="key">#}
+{#                        Тел.:#}
+{#                    </td>#}
+{#                    <td class="val">#}
+{#                        (017) 286-30-71, 286-31-72#}
+{#                    </td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td class="key">#}
+{#                        Факс:#}
+{#                    </td>#}
+{#                    <td class="val">#}
+{#                        (017) 286-31-72#}
+{#                    </td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td class="key">#}
+{#                        E-mail:#}
+{#                    </td>#}
+{#                    <td class="val">#}
+{#                        info@temptation.by#}
+{#                    </td>#}
+{#                </tr>#}
+{#            </table>#}
 {#            <div class="cart_widget">#}
 {#                <a href="#" class="cart_link"></a>#}
 {#                <div class="cart_info">#}
@@ -58,12 +47,12 @@
 {#                </div>#}
 {#            </div>#}
 {#            <div class="clearfloat"></div>#}
-        </div>
-    </header>
-    <nav class="main_nav content">
-        <a href="{{ path('client_catalog_index') }}" class="catalog_link">
-            КАТАЛОГ
-        </a>
+{#        </div>#}
+{#    </header>#}
+{#    <nav class="main_nav content">#}
+{#        <a href="{{ path('client_catalog_index') }}" class="catalog_link">#}
+{#            КАТАЛОГ#}
+{#        </a>#}
 {#        <a href="#">#}
 {#            НОВОСТИ#}
 {#        </a>#}
@@ -76,8 +65,8 @@
 {#        <a href="#">#}
 {#            О КОМПАНИИ#}
 {#        </a>#}
-    </nav>
-    <div class="page_with_side content">
+{#    </nav>#}
+{#    <div class="page_with_side content">#}
         <div class="side">
             <form action="ajax/filter.php" class="filter_form"></form>
             <div class="sex_changer">
@@ -233,18 +222,18 @@
                 <div class="clearfloat"></div>
             </div>
             <div class="clearfloat"></div>
-        </div>
-    </div>
-</div>
-<div class="footer_wr">
-    <footer class="footer content">
-        <div class="logo_copyright">
-            <a href="#" class="logo_footer"></a>
-            <div class="clearfloat"></div>
-            <div class="copyright">
-                © 2014 Temptation
-            </div>
-        </div>
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="footer_wr">#}
+{#    <footer class="footer content">#}
+{#        <div class="logo_copyright">#}
+{#            <a href="#" class="logo_footer"></a>#}
+{#            <div class="clearfloat"></div>#}
+{#            <div class="copyright">#}
+{#                © 2014 Temptation#}
+{#            </div>#}
+{#        </div>#}
 {#        <div class="footer_block">#}
 {#            <div class="label">#}
 {#                О НАС#}
@@ -301,42 +290,42 @@
 {#                </li>#}
 {#            </ul>#}
 {#        </div>#}
-        <div class="footer_block last">
-            <div class="label">
-                КОНТАКТЫ
-            </div>
-            <table class="footer_contacts">
-                <tr>
-                    <td class="key">
-                        Тел.:
-                    </td>
-                    <td class="val">
-                        (017) 286-30-71, 286-31-72
-                    </td>
-                </tr>
-                <tr>
-                    <td class="key">
-                        Факс:
-                    </td>
-                    <td class="val">
-                        (017) 286-31-72
-                    </td>
-                </tr>
-                <tr>
-                    <td class="key">
-                        E-mail:
-                    </td>
-                    <td class="val">
-                        info@temptation.by
-                    </td>
-                </tr>
-            </table>
+{#        <div class="footer_block last">#}
+{#            <div class="label">#}
+{#                КОНТАКТЫ#}
+{#            </div>#}
+{#            <table class="footer_contacts">#}
+{#                <tr>#}
+{#                    <td class="key">#}
+{#                        Тел.:#}
+{#                    </td>#}
+{#                    <td class="val">#}
+{#                        (017) 286-30-71, 286-31-72#}
+{#                    </td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td class="key">#}
+{#                        Факс:#}
+{#                    </td>#}
+{#                    <td class="val">#}
+{#                        (017) 286-31-72#}
+{#                    </td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td class="key">#}
+{#                        E-mail:#}
+{#                    </td>#}
+{#                    <td class="val">#}
+{#                        info@temptation.by#}
+{#                    </td>#}
+{#                </tr>#}
+{#            </table>#}
 {#            <a href="#">#}
 {#                Обратная свзяь#}
 {#            </a>#}
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+{#        </div>#}
+{#    </footer>#}
+{#</div>#}
+{% endblock %}
+
 

@@ -15,8 +15,6 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        return $this->render('client/index/index.html.twig', [
-            'controller_name' => 'IndexController',
-        ]);
+        return $this->redirectToRoute('client_catalog_index');
     }
 }

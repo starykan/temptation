@@ -21,8 +21,8 @@ class CategoryRepository extends ServiceEntityRepository
 
     public function findFirstCategory(int $gender): Category
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.gender = :gender')
+        return $this->createQueryBuilder('category')
+            ->andWhere('category.gender = :gender')
             ->setParameter('gender', $gender)
             ->setMaxResults(1)
             ->getQuery()
@@ -32,8 +32,8 @@ class CategoryRepository extends ServiceEntityRepository
 
     public function findByGender(int $gender): array
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.gender = :gender')
+        return $this->createQueryBuilder('category')
+            ->andWhere('category.gender = :gender')
             ->setParameter('gender', $gender)
             ->getQuery()
             ->getResult();

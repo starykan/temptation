@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Repository;
-
 
 use App\Entity\Category;
 use App\Entity\Product;
@@ -26,7 +24,7 @@ class ProductRepository extends ServiceEntityRepository
     public function getFindAllQuery(): Query
     {
         return $this
-            ->createQueryBuilder('p')
+            ->createQueryBuilder('product')
             ->getQuery();
     }
 
@@ -34,12 +32,28 @@ class ProductRepository extends ServiceEntityRepository
      * @return Product[]
      */
     public function findByCategory(Category $category): array
+    //1 entity Category c одним аргументом, проверка что возвращает массив
+    {
+        return $this
+            ->createQueryBuilder('product')
+            //обозначаем условно энтити для которой пишем запрос
+            ->andWhere('product.category = :category')
+            //условие выборки. делаем выборку продуктов по категории, параметр запроса
+            ->setParameter('category', $category)
+            //параметр выборки
+            ->getQuery()
+            //получаем обьект запроса
+            ->getResult();
+            //получаем результат запроса (выборку)
+    }
+
+    public function findById(int $id): ?Product
     {
         return $this
             ->createQueryBuilder('p')
-            ->andWhere('p.category = :category')
-            ->setParameter('category', $category)
+            ->andWhere('p.id = :id')
+            ->setParameter('id', $id)
             ->getQuery()
-            ->getResult();
+            ->getOneOrNullResult();
     }
 }

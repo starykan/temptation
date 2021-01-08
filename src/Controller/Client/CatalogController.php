@@ -24,6 +24,15 @@ class CatalogController extends AbstractController
         ]);
     }
 
+
+//    /**
+//     * @Route("/catalog/categories", name="client_catalog_category1", methods={"GET"})
+//     */
+//    public function category1(
+//    ): Response {
+//        return new Response('test');
+//    }
+
     /**
      * @Route("/catalog/categories/{categoryId}", name="client_catalog_category", methods={"GET"})
      */
