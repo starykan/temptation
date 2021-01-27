@@ -25,13 +25,6 @@ class CatalogController extends AbstractController
     }
 
 
-//    /**
-//     * @Route("/catalog/categories", name="client_catalog_category1", methods={"GET"})
-//     */
-//    public function category1(
-//    ): Response {
-//        return new Response('test');
-//    }
 
     /**
      * @Route("/catalog/categories/{categoryId}", name="client_catalog_category", methods={"GET"})
@@ -54,6 +47,7 @@ class CatalogController extends AbstractController
             'activeCategory' => $category,
             'GENDER_MALE' => Category::GENDER_MALE,
             'GENDER_FEMALE' => Category::GENDER_FEMALE,
+            'product' => $productRepository,
         ]);
     }
 

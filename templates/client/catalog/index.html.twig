@@ -166,7 +166,7 @@
 {#                </div>#}
                 {% for product in products %}
                     <div class="product_widget{% if loop.index % 3 == 0 %} last_in_line{% endif %}">
-                        <a href="" class="image">
+                        <a href="{{ path('client_product_index', {'id': product.id}) }}" class="link">
                             {% if product.getMainImage() %}
                                 <img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" />
                             {% endif %}
