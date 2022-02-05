@@ -112,97 +112,7 @@
 		<div class="clearfloat"></div>
 	</div>
 	<div class="products" id="test">
-{#			<div class="side">#}
-{#				<form action="ajax/filter.php" class="filter_form"></form>#}
-{#                <div class="sex_changer">#}
-{#                    <span class="link active">#}
-{#                        ДЛЯ НЕЕ#}
-{#                    </span>#}
-{#                    <a href="#" class="link">#}
-{#                        ДЛЯ НЕГО#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                </div>#}
-{#                <nav class="categorys">#}
-{#                    <span class="category_link active">#}
-{#                        БЮСТАЛЬТЕРЫ#}
-{#                    </span>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ТРУСЫ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        НОЧНЫЕ СОРОЧКИ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ПЕНЬЮАРЫ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ГРАЦИИ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ПИЖАМЫ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ФУТБОЛКИ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        МАЙКИ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        БРЮКИ ДОМАШНИЕ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        КОРСЕТЫ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ПОДВЯЗКИ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        КУПАЛЬНИК#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ПЛЯЖНАЯ ОДЕЖДА#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ШОРТЫ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        ЖАКЕТЫ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        КОЛГОТКИ, ЧУЛКИ,#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        НОСКИ#}
-{#                    </a>#}
-{#                    <div class="clearfloat"></div>#}
-{#                    <a href="#" class="category_link">#}
-{#                        АКСЕССУАРЫ#}
-{#                    </a>#}
-{#                </nav>#}
-{#                <div class="separator"></div>#}
-{#				<div class="clearfloat"></div>#}
-{#			</div>#}
 			<div class="products">
-{#				<a href="#" class="back_to_catalog">#}
-{#					Вернуться к каталогу#}
-{#				</a>#}
 				<div class="clearfloat"></div>
 				<div class="product_photo_widget">
 					<div class="big_img">
@@ -212,7 +122,7 @@
 					<ul class="img_preview">
 						<li>
 							<a href="images/uploads/product_img.jpg" class="active">
-								<img src="images/uploads/product_img_preview.jpg" alt="">
+								<img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" alt="">
 							</a>
 						</li>
 						<li>
@@ -256,7 +166,7 @@
 {#								</li>#}
 {#							</ul>#}
 {#						</div>#}
-						<div class="clearfloat"></div>
+{#						<	div class="clearfloat">#}
 					</div>
 					<div class="clearfloat"></div>
 					<div class="price">
@@ -268,18 +178,18 @@
 						</div>
 						<div class="clearfloat"></div>
 					</div>
-{#					<div class="counter">#}
-{#						<a href="#" class="minus">&ndash;</a>#}
+{# 					<div class="counter">#}
+{# 						<a href="#" class="minus">&ndash;</a>#}
 {#                            <input type="text" class="counter_input" name="count" value="1" readonly>#}
 {#                        <a href="#" class="plus">+</a>#}
 {#                        <div class="label">#}
 {#                        	Количество#}
 {#                        </div>#}
-{#					</div>#}
-{#					<div class="clearfloat"></div>#}
-{#					<button class="some_btn" type="submit">#}
-{#						ЗАКАЗАТЬ#}
-{#					</button>#}
+{# 					</div>#}
+{# 					<div class="clearfloat"></div>#}
+{# 					<button class="some_btn" type="submit">#}
+{# 						ЗАКАЗАТЬ#}
+{# 					</button>#}
 				</form>
 				<div class="clearfloat"></div>
 			</div>
@@ -356,29 +266,29 @@
 {#        		</div>#}
 {#        		<table class="footer_contacts">#}
 {#        			<tr>#}
-{#		            	<td class="key">#}
-{#		            		Тел.:#}
-{#		            	</td>#}
-{#		            	<td class="val">#}
-{#		            		(017) 286-30-71, 286-31-72#}
-{#		            	</td>#}
-{#		            </tr>#}
-{#		            <tr>#}
-{#		            	<td class="key">#}
-{#		            		Факс:#}
-{#		            	</td>#}
-{#		            	<td class="val">#}
-{#		            		(017) 286-31-72#}
-{#		            	</td>#}
-{#		            </tr>#}
-{#		            <tr>#}
-{#		            	<td class="key">#}
-{#		            		E-mail:#}
-{#		            	</td>#}
-{#		            	<td class="val">#}
-{#		            		info@temptation.by#}
-{#		            	</td>#}
-{#		            </tr>#}
+{# 		            	<td class="key"}#}
+{# 		            		Тел.}#}
+{# 		            	</td}#}
+{# 		            	<td class="val"}#}
+{# 		            		(017) 286-30-71, 286-31-7}#}
+{# 		            	</td}#}
+{# 		            </tr}#}
+{# 		            <tr}#}
+{# 		            	<td class="key"}#}
+{# 		            		Факс}#}
+{# 		            	</td}#}
+{# 		            	<td class="val"}#}
+{# 		            		(017) 286-31-7}#}
+{# 		            	</td}#}
+{# 		            </tr}#}
+{# 		            <tr}#}
+{# 		            	<td class="key"}#}
+{# 		            		E-mail}#}
+{# 		            	</td}#}
+{# 		            	<td class="val"}#}
+{# 		            		info@temptation.b}#}
+{# 		            	</td}#}
+{# 		            </tr}#}
 {#        		</table>#}
 {#        		<a href="#">#}
 {#        			Обратная свзяь#}
