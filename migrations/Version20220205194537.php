@@ -21,12 +21,13 @@ final class Version20220205194537 extends AbstractMigration
     {
       $this->addSql('CREATE TABLE shops(
 								    	id INT NOT NULL AUTO_INCREMENT,
-    									phone VARCHAR(100) NOT NULL,
-    									address VARCHAR(200)NOT NULL,
-    									name VARCHAR(50) NOT NULL,
-										shop_image VARCHAR(50) NOT  NULL,
+    									tel VARCHAR(255) NOT NULL,
+    									adress VARCHAR(255)NOT NULL,
+    									name VARCHAR(255) NOT NULL,
+										info VARCHAR(255) NOT  NULL,
+										mainPic VARCHAR(255) NOT  NULL,
     									PRIMARY KEY(id)
-    									) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDBCREATE'
+    									) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB'
         );
 
     }
