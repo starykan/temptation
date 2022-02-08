@@ -1,0 +1,43 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Магазины{% endblock %}
+
+{% block body %}
+    <h1>Shop index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Adress</th>
+                <th>Tel</th>
+                <th>Main_pic</th>
+                <th>Info</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for shop in shops %}
+            <tr>
+                <td>{{ shop.id }}</td>
+                <td>{{ shop.name }}</td>
+                <td>{{ shop.adress }}</td>
+                <td>{{ shop.tel }}</td>
+                <td>{{ shop.mainPic }}</td>
+                <td>{{ shop.info }}</td>
+                <td>
+                    <a href="{{ path('admin_shop_show', {'id': shop.id}) }}">show</a>
+                    <a href="{{ path('admin_shop_edit', {'id': shop.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_shop_new') }}">Create new</a>
+{% endblock %}
