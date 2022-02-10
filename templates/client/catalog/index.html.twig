@@ -67,6 +67,7 @@
 {#        </a>#}
 {#    </nav>#}
 {#    <div class="page_with_side content">#}
+<div class="page_with_side content">
         <div class="side">
             <form action="ajax/filter.php" class="filter_form"></form>
             <div class="sex_changer">
@@ -146,24 +147,24 @@
 {#                                2A#}
 {#                            </span>#}
 {#                        </li>#}
-{#                        <li>#}
-{#                            <span class="check_element multi_filter" data-name="size" data-id="22">#}
-{#                                2B#}
-{#                            </span>#}
-{#                        </li>#}
-{#                        <li>#}
-{#                            <span class="check_element multi_filter" data-name="size" data-id="23">#}
-{#                                2C#}
-{#                            </span>#}
-{#                        </li>#}
-{#                    </ul>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="clearfloat"></div>#}
-{#            <div class="products_list">#}
-{#                <div class="sort_result">#}
-{#                    Найдено товаров: <span>49</span>#}
-{#                </div>#}
+{#                        <li>
+{ #                        <span class="check_element multi_filter" data-name="size" data-id="22">
+{#                                  2B#}
+{#                              </span>#}
+{#                          </li>#}
+{#                          <li>#}
+{#                              <span class="check_element multi_filter" data-name="size" data-id="23">#}
+{#                                  2C#}
+{#                              </span>#}
+{#                          </li>#}
+{#                      </ul>#}
+{#                  </div>#}
+{#              </div>#}
+{#              <div class="clearfloat"></div>#}
+{#              <div class="products_list">#}
+{#                  <div class="sort_result">#}
+{#                      Найдено товаров: <span>49</span>#}
+{#             </div>#}
                 {% for product in products %}
                     <div class="product_widget{% if loop.index % 3 == 0 %} last_in_line{% endif %}">
                         <a href="{{ path('client_product_index', {'id': product.id}) }}" class="link">
@@ -326,6 +327,7 @@
 {#        </div>#}
 {#    </footer>#}
 {#</div>#}
+</div>
 {% endblock %}
 
 

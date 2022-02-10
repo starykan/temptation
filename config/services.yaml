@@ -33,6 +33,10 @@ services:
     App\Repository\ProductRepository:
         class: App\Repository\ProductRepository
         arguments: [ '@Doctrine\Persistence\ManagerRegistry' ]
+        
+    App\Repository\ShopRepository:
+        class: App\Repository\ShopRepository
+        arguments: ['@Doctrine\Persistence\ManagerRegistry']
 
     App\Manager\ProductManager:
         class: App\Manager\ProductManager

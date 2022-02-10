@@ -27,7 +27,7 @@ final class Version20220205194537 extends AbstractMigration
 										info VARCHAR(255) NOT  NULL,
 										mainPic VARCHAR(255) NOT  NULL,
     									PRIMARY KEY(id)
-    									) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
+    									) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB'
         );
 
     }
