@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Shop;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @method Shop|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,6 +20,12 @@ class ShopRepository extends ServiceEntityRepository
         parent::__construct($registry, Shop::class);
     }
 
+    public function findAll(): array
+    {
+    	 return $this->createQueryBuilder('shops')->getQuery()->getResult();
+     }
+    
+    
     // /**
     //  * @return Shop[] Returns an array of Shop objects
     //  */

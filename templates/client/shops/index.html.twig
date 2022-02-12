@@ -11,17 +11,20 @@
 				<div class="title_block">
 					На карте
 				</div>
-				<div class="content_block">	
+					<div class="content_block">	
 						<script type="text/javascript" charset="utf-8" 
 						async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acd9bf847ac3c7573f2b94442269323d27ca937b
 												24a6273be4c7187e141add402&amp;width=930&amp;height=320&amp;lang=ru_RU&amp;scroll=true"></script>
-					<br/>
+ 			    	</div>
    		    	</div>
-   		    	
    		    	{% for shop in shops %}
                     <div class="shop_item">
-                        <a href="{{ path('client_shop_index', {'id': shop.id}) }}" class="link">
-                        </a>
+						<a href="#" class="image">
+							<span class="image_wr">
+								<img src="images/uploads/shop_image.jpg" alt="">
+							</span>
+						</a>
+						<div class="info">
                         <a href="#" class="name">
                             {{ shop.name }}
                         </a>
@@ -31,7 +34,7 @@
 							Адрес:
 						</div>
 						<div class="val">
-							г. Минск, ул. В. Хоружей, 1А.
+							{{ shop.adress }}
 						</div>
 					</div>
 					<div class="info_item">
@@ -39,12 +42,10 @@
 							Телефоны:
 						</div>
 						<div class="val">
-							( +375 44) 555 25 08 
-							<br>
-							( +375 44) 555 25 06
-							<br>
-							( +375 44) 555 25 07
+							{{ shop.tel }}
 						</div>
+					</div>
+					</div>
                         <div class="clearfloat"></div>
                     </div>
                 {% endfor %}
@@ -152,5 +153,5 @@
 				<div class="clearfloat"></div>
 			</div>
 			<div class="clearfloat"></div>
-		</div>
+		</div>#}
    {% endblock %}
