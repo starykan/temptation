@@ -15,8 +15,8 @@ class ShopType extends AbstractType
             ->add('name')
             ->add('adress')
             ->add('tel')
-            ->add('main_pic')
             ->add('info')
+            ->add('main_pic')
         ;
     }
 

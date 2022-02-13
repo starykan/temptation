@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\ProductImage;
 use App\Entity\Category;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -56,4 +57,17 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+    
+    public function  findPics(ProductImage $productImage, int $id ): ?ProductImage
+    {
+    	return $this
+    	->createQueryBuilder('productImage')
+    	->andWhere('productImage.id = :id')
+    	->setParameter('id', $id)
+    	->getQuery()
+    	->getResult();
+    }
+    
+    
+    
 }

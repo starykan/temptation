@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\Controller\Client;
 
 use App\Entity\Category;
+use App\Entity\ProductImage;
 use App\Manager\ProductManager;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 
 class ProductController extends AbstractController
@@ -22,10 +24,12 @@ class ProductController extends AbstractController
         ProductRepository $productRepository,
         CategoryRepository $categoryRepository,
         ProductManager $productManager,
+    	ProductImage $productImage,
         int $id
     ): Response {
         $product = $productRepository->findById($id);
         $category = $product->getCategory();
+        $image = $productRepository->findPics($productImage, $id);
         if (!$category) {
             throw $this->createNotFoundException();
         }
@@ -36,6 +40,7 @@ class ProductController extends AbstractController
             'GENDER_FEMALE' => Category::GENDER_FEMALE,
             'productManager' => $productManager,
             'product' => $product,
+        	'image' =>  $image,
         ]);
     }
 }

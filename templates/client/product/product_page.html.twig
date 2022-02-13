@@ -119,10 +119,11 @@
 						<img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" alt="">
 					</div>
 					<div class="clearfloat"></div>
+					{% for product in products %}
 					<ul class="img_preview">
 						<li>
 							<a href="images/uploads/product_img.jpg" class="active">
-								<img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" alt="">
+								<img src="{{ productManager.getImageFullUrl(product.findPics()) }}" alt="">
 							</a>
 						</li>
 						<li>
@@ -131,6 +132,7 @@
 							</a>
 						</li>
 					</ul>
+					{% endfor %}
 					<div class="clearfloat"></div>
 				</div>
 				<form action="ajax/add_cart.php" class="product_form">
