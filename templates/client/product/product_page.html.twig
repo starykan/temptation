@@ -119,16 +119,17 @@
 						<img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" alt="">
 					</div>
 					<div class="clearfloat"></div>
-					{% for product in products %}
+					{% for image in imageArray %}
 					<ul class="img_preview">
 						<li>
-							<a href="images/uploads/product_img.jpg" class="active">
-								<img src="{{ productManager.getImageFullUrl(product.findPics()) }}" alt="">
+							<a href="{{ productManager.getImageFullUrl(image) }}" {% if (image == product.getMainImage()) %}class="active"{% endif %}>
+								<img src="{{ productManager.getImageFullUrl(image) }}" alt="">
 							</a>
 						</li>
+						{% else %}
 						<li>
-							<a href="images/uploads/product_img_preview.jpg">
-								<img src="images/uploads/product_img_preview.jpg" alt="">
+							<a href="{{ productManager.getImageFullUrl(image) }}">
+								<img src="{{ productManager.getImageFullUrl(image) }}" alt="">
 							</a>
 						</li>
 					</ul>

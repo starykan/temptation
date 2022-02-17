@@ -12,6 +12,7 @@ use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Product;
 
 
 
@@ -24,12 +25,10 @@ class ProductController extends AbstractController
         ProductRepository $productRepository,
         CategoryRepository $categoryRepository,
         ProductManager $productManager,
-    	ProductImage $productImage,
-        int $id
+    	 int $id    	 
     ): Response {
         $product = $productRepository->findById($id);
         $category = $product->getCategory();
-        $image = $productRepository->findPics($productImage, $id);
         if (!$category) {
             throw $this->createNotFoundException();
         }
@@ -40,7 +39,7 @@ class ProductController extends AbstractController
             'GENDER_FEMALE' => Category::GENDER_FEMALE,
             'productManager' => $productManager,
             'product' => $product,
-        	'image' =>  $image,
+        	'imageArray' =>  $productRepository->findPics($id),
         ]);
     }
 }

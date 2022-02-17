@@ -58,11 +58,16 @@ class ProductRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
     
-    public function  findPics(ProductImage $productImage, int $id ): ?ProductImage
+    /**
+     * @return ProductImage[]
+     */
+    public function  findPics( int $id ): array
     {
     	return $this
+    	->getEntityManager()
+    	->getRepository(ProductImage::class)
     	->createQueryBuilder('productImage')
-    	->andWhere('productImage.id = :id')
+    	->andWhere('productImage.product = :id')
     	->setParameter('id', $id)
     	->getQuery()
     	->getResult();
