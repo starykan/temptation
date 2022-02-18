@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ShopRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +44,16 @@ class Shop
      * @ORM\Column(type="string", length=255)
      */
     private $info;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ShopImage::class, mappedBy="shop")
+     */
+    private $shop;
+
+    public function __construct()
+    {
+        $this->shop = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +116,36 @@ class Shop
     public function setInfo(string $info): self
     {
         $this->info = $info;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ShopImage[]
+     */
+    public function getShop(): Collection
+    {
+        return $this->shop;
+    }
+
+    public function addShop(ShopImage $shop): self
+    {
+        if (!$this->shop->contains($shop)) {
+            $this->shop[] = $shop;
+            $shop->setShop($this);
+        }
+
+        return $this;
+    }
+
+    public function removeShop(ShopImage $shop): self
+    {
+        if ($this->shop->removeElement($shop)) {
+            // set the owning side to null (unless already changed)
+            if ($shop->getShop() === $this) {
+                $shop->setShop(null);
+            }
+        }
 
         return $this;
     }
