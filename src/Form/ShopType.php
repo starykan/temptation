@@ -17,7 +17,7 @@ class ShopType extends AbstractType
             ->add('adress')
             ->add('tel')
             ->add('info')
-            ->add('main_pic', FileType::class, [
+            ->add('uploadedImages', FileType::class, [
                 'multiple' => true,
                 'attr' => [
                     'accept' => 'image/*',

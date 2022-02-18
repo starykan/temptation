@@ -6,6 +6,7 @@ use App\Repository\ShopRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=ShopRepository::class)
@@ -38,7 +39,7 @@ class Shop
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $main_pic;
+    private $main_image_hash;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -49,6 +50,26 @@ class Shop
      * @ORM\OneToMany(targetEntity=ShopImage::class, mappedBy="shop")
      */
     private $shop;
+    
+    /**
+     * @var ProductImage[]
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductImage", mappedBy="product")
+     */
+    private $images;
+    
+    /**
+     * @var UploadedFile[]
+     */
+    private $uploadedImages;
+    
+    /**
+     * @var ProductImage
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\ProductImage")
+     * @ORM\JoinColumn(name="main_image_hash", referencedColumnName="image_hash")
+     */
+    private $mainImage;
 
     public function __construct()
     {
@@ -96,18 +117,54 @@ class Shop
         return $this;
     }
 
-    public function getMainPic(): ?string
+    public function getMain_image_hash(): ?string
     {
-        return $this->main_pic;
+    	return $this->main_image_hash;
     }
 
-    public function setMainPic(string $main_pic): self
+    public function setMain_image_hash(string $main_image_hash): self
     {
-        $this->main_pic = $main_pic;
+    	$this->main_image_hash= $main_image_hash;
 
         return $this;
     }
 
+    /**
+     * @return ProductImage[]|Collection
+     */
+    public function getImages(): Collection
+    {
+    	return $this->images;
+    }
+    
+    public function setUploadedImages(array $uploadedImages): void
+    {
+    	$this->uploadedImages = $uploadedImages;
+    }
+    
+    /**
+     * @return UploadedFile[]
+     */
+    public function getUploadedImages(): array
+    {
+    	return $this->uploadedImages ?: [];
+    }
+    
+    public function addUploadedImage(UploadedFile $image): void
+    {
+    	$this->uploadedImages[] = $image;
+    }
+    
+    public function getMainImage(): ?ProductImage
+    {
+    	return $this->mainImage;
+    }
+    
+    public function setMainImage(ProductImage $mainImage): void
+    {
+    	$this->mainImage = $mainImage;
+    }
+    
     public function getInfo(): ?string
     {
         return $this->info;
