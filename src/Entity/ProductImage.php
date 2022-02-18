@@ -15,7 +15,6 @@ class ProductImage
 
     /**
      * @var string
-     *
      * @ORM\Id()
      * @ORM\Column(name="image_hash", type="string", length=255)
      */
@@ -23,7 +22,6 @@ class ProductImage
 
     /**
      * @var Product
-     *
      * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="images")
      * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
@@ -48,5 +46,4 @@ class ProductImage
     {
         $this->product = $product;
     }
-
 }

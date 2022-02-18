@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Manager;
-
 
 use App\Entity\Product;
 use App\Entity\ProductImage;

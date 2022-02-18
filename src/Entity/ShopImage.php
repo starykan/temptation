@@ -23,15 +23,11 @@ class ShopImage
     private $imageHash;
 
     /**
+     * @var Shop
      * @ORM\ManyToOne(targetEntity=Shop::class, inversedBy="shop")
      * @ORM\JoinColumn(nullable=false)
      */
     private $shop;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getImageHash(): ?string
     {
@@ -41,8 +37,6 @@ class ShopImage
     public function setImageHash(string $imageHash): self
     {
         $this->imageHash = $imageHash;
-
-        return $this;
     }
 
     public function getShop(): ?Shop
@@ -53,7 +47,5 @@ class ShopImage
     public function setShop(?Shop $shop): self
     {
         $this->shop = $shop;
-
-        return $this;
     }
 }

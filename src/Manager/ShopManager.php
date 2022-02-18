@@ -3,6 +3,7 @@
 namespace App\Manager;
 
 use App\Entity\Shop;
+use App\Entity\ShopImage;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Routing\RouterInterface;
@@ -36,14 +37,14 @@ class ShopManager
         $this->entityManager->persist($product);
         $this->entityManager->flush();
         foreach ($shop->getUploadedImages() as $image) {
-            $imageEntity = new ProductImage();
-            $imageEntity->setProduct($product);
+            $imageEntity = new ShopImage();
+            $imageEntity->setShop($shop);
             $imageEntity->setImageHash(uniqid());
             $this->entityManager->persist($imageEntity);
-            if (!$product->getMainImage()) {
-                $product->setMainImage($imageEntity);
+            if (!$shop->getMainImage()) {
+                $shop->setMainImage($imageEntity);
             }
-            $targetDir = $this->uploadsDir . '/products/' . $product->getId() . '/full';
+            $targetDir = $this->uploadsDir . '/shops/' . $shop->getId() . '/full';
             if (!is_dir($targetDir)) {
                 mkdir($targetDir, 0777, true);
             }
@@ -52,11 +53,11 @@ class ShopManager
         $this->entityManager->flush();
     }
 
-    public function getImageFullUrl(ProductImage $image): string
+    public function getImageFullUrl(ShopImage $image): string
     {
         return $this->router->generate(
-            'uploaded_product_image_full',
-            ['product_id' => $image->getProduct()->getId(), 'image_hash' => $image->getImageHash()]
+            'uploaded_shop_image_full',
+            ['shop_id' => $image->getShop()->getId(), 'image_hash' => $image->getImageHash()]
         );
     }
 }
