@@ -17,7 +17,7 @@ final class Version20220218143159 extends AbstractMigration
         return '';
     }
 
-    public function up(Schema $schema) : void20
+    public function up(Schema $schema) : void
     {
     	$this->addSql('CREATE TABLE shop_images (
                 shop_id INT NOT NULL,
