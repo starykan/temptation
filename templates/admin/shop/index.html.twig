@@ -3,16 +3,16 @@
 {% block title %}Магазины{% endblock %}
 
 {% block body %}
-    <h1>Shop index</h1>
-
+  
     <table class="table">
         <thead>
             <tr>
+            	<th></th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Adress</th>
                 <th>Tel</th>
-                <th>Main_pic</th>
+                <th>Pic</th>
                 <th>Info</th>
                 <th>actions</th>
             </tr>
@@ -20,6 +20,11 @@
         <tbody>
         {% for shop in shops %}
             <tr>
+            	<td>
+                    {% if shop.getMainImage() %}
+                        <img src="{{ shopManager.getImageFullUrl(shop.getMainImage()) }}"/>
+                    {% endif %}
+                </td>
                 <td>{{ shop.id }}</td>
                 <td>{{ shop.name }}</td>
                 <td>{{ shop.adress }}</td>

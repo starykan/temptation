@@ -34,7 +34,7 @@ class ShopManager
 
     public function save(Shop $shop): void
     {
-        $this->entityManager->persist($product);
+        $this->entityManager->persist($shop);
         $this->entityManager->flush();
         foreach ($shop->getUploadedImages() as $image) {
             $imageEntity = new ShopImage();

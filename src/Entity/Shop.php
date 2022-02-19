@@ -52,9 +52,9 @@ class Shop
     private $shop;
     
     /**
-     * @var ProductImage[]
+     * @var ShopImage[]
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\ProductImage", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="App\Entity\ShopImage", mappedBy="product")
      */
     private $images;
     
@@ -64,9 +64,9 @@ class Shop
     private $uploadedImages;
     
     /**
-     * @var ProductImage
+     * @var ShopImage
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\ProductImage")
+     * @ORM\ManyToOne(targetEntity="App\Entity\ShopImage")
      * @ORM\JoinColumn(name="main_image_hash", referencedColumnName="image_hash")
      */
     private $mainImage;
@@ -130,7 +130,7 @@ class Shop
     }
 
     /**
-     * @return ProductImage[]|Collection
+     * @return ShopImage[]|Collection
      */
     public function getImages(): Collection
     {
