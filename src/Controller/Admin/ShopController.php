@@ -6,7 +6,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Shop;
 use App\Form\ShopType;
+use App\Manager\ShopManager;
 use App\Repository\ShopRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +22,8 @@ class ShopController extends AbstractController
     /**
 	*@Route("/", name="admin_shop_index", methods= {"GET"})
 	*/
-    public function index(ShopRepository $shopRepository): Response
+	public function index(ShopRepository $shopRepository,
+    											ShopManager $shopManager): Response
     {
         return $this->render('admin/shop/index.html.twig', [
             'shops' => $shopRepository->findAll(),
@@ -29,16 +32,13 @@ class ShopController extends AbstractController
 /**
    * @Route("/new", name="admin_shop_new", methods={"GET", "POST"})
    */
-    public function new(Request $request): Response
+    public function new(Request $request, ShopManager $shopManager): Response
     {
         $shop = new Shop();
         $form = $this->createForm(ShopType::class, $shop);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($shop);
-            $entityManager->flush();
+        	$shopManager->save($shop);
 
             return $this->redirectToRoute('admin_shop_index');
         }
@@ -48,6 +48,7 @@ class ShopController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
 /**
    *@ Route("/{id}", name= "admin_shop_show", methods= {"GET"})
    */
@@ -60,22 +61,24 @@ class ShopController extends AbstractController
 /**
    * @Route("/{id}/edit", name= "admin_shop_edit", methods= {"GET", "POST"})
    */
-    public function edit(Request $request, Shop $shop): Response
+    public function edit(Request $request, Shop $shop, ShopManager $shopManager): Response
     {
         $form = $this->createForm(ShopType::class, $shop);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        	$shopManager->save($shop);
 
             return $this->redirectToRoute('admin_shop_index');
         }
 
         return $this->render('admin/shop/edit.html.twig', [
             'shop' => $shop,
+        	'shopManager' => $shopManager,
             'form' => $form->createView(),
         ]);
     }
+    
 /**
    * @Route("/{id}", name= "admin_shop_delete", methods= {"DELETE"})
    */

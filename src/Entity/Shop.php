@@ -54,7 +54,7 @@ class Shop
     /**
      * @var ShopImage[]
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\ShopImage", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="App\Entity\ShopImage", mappedBy="shop")
      */
     private $images;
     
@@ -155,12 +155,12 @@ class Shop
     	$this->uploadedImages[] = $image;
     }
     
-    public function getMainImage(): ?ProductImage
+    public function getMainImage(): ?ShopImage
     {
     	return $this->mainImage;
     }
     
-    public function setMainImage(ProductImage $mainImage): void
+    public function setMainImage(ShopImage $mainImage): void
     {
     	$this->mainImage = $mainImage;
     }
