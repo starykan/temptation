@@ -27,6 +27,7 @@ class ShopController extends AbstractController
     {
         return $this->render('admin/shop/index.html.twig', [
             'shops' => $shopRepository->findAll(),
+        	'shopManager' => $shopManager
         ]);
     }
 /**

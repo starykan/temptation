@@ -3,3 +3,5 @@
 #    controller: App\Controller\DefaultController::index
 uploaded_product_image_full:
     path: /uploads/products/{product_id}/full/{image_hash}.jpg
+uploaded_shop_image_full:
+    path: /uploads/shops/{shop_id}/full/{image_hash}.jpg

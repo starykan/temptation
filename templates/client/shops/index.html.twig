@@ -21,7 +21,12 @@
                     <div class="shop_item">
 						<a href="#" class="image">
 							<span class="image_wr">
-								<img src="images/uploads/shop_image.jpg" alt="">
+							
+							{#	<img src="images/uploads/shop_image.jpg" alt="">#}
+					
+							{% if shop.getMainImage() %}
+								<img src="{{ shopManager.getImageFullUrl(shop.getMainImage()) }}" alt="">
+							{% endif %}
 							</span>
 						</a>
 						<div class="info">
