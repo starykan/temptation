@@ -1,0 +1,184 @@
+{% extends 'client/client_base.html.twig' %}
+
+{% block title %}Temptation{% endblock %}
+
+{% block body %}
+
+		<div class="page content">
+			<h1 class="page_title">
+				КОРЗИНА
+			</h1>
+			<form action="ajax/change_cart.php" class="cart">
+				<div class="cart_count">
+					Товаров в корзине: <span>2</span>
+				</div>
+				<div class="cart_item" data-price="35000">
+					<a href="#" class="remove"></a>
+					<a href="#" class="image">
+						<span class="img_wr">
+							<img src="images/uploads/cart_item_img.jpg" alt="">
+						</span>
+					</a>
+					<div class="info">
+						<a href="#" class="name">
+							Бюстгальтер 
+							<br>
+							Push-up
+						</a>
+						<div class="clearfloat"></div>
+						<div class="price">
+							35 000 р.
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="count_price">
+						<div class="counter">
+							<div class="label">
+	                        	Количество:
+	                        </div>
+							<a href="#" class="minus">&ndash;</a>
+	                            <input type="text" class="counter_input" name="count" value="1" readonly>
+	                        <a href="#" class="plus">+</a>
+						</div>
+						<div class="clearfloat"></div>
+						<div class="price">
+							<div class="label">
+								Итого:
+							</div>
+							<div class="val">
+								<span>35 000</span> р.
+							</div>
+							<div class="clearfloat"></div>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="clearfloat"></div>
+				</div>
+				<div class="cart_item" data-price="35000">
+					<a href="#" class="remove"></a>
+					<a href="#" class="image">
+						<span class="img_wr">
+							<img src="images/uploads/cart_item_img.jpg" alt="">
+						</span>
+					</a>
+					<div class="info">
+						<a href="#" class="name">
+							Бюстгальтер 
+							<br>
+							Push-up
+						</a>
+						<div class="clearfloat"></div>
+						<div class="price">
+							35 000 р.
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="count_price">
+						<div class="counter">
+							<div class="label">
+	                        	Количество:
+	                        </div>
+							<a href="#" class="minus">&ndash;</a>
+	                            <input type="text" class="counter_input" name="count" value="1" readonly>
+	                        <a href="#" class="plus">+</a>
+						</div>
+						<div class="clearfloat"></div>
+						<div class="price">
+							<div class="label">
+								Итого:
+							</div>
+							<div class="val">
+								<span>35 000</span> р.
+							</div>
+							<div class="clearfloat"></div>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="clearfloat"></div>
+				</div>
+				<div class="separator"></div>
+				<div class="cash_info">
+					<table>
+						<tr>
+							<td class="label">
+								Общая стоимость:
+							</td>
+							<td class="val products_price">
+								<span>70 000</span> р.
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								Стоимость доставки:
+							</td>
+							<td class="val delivery_price" data-delivery-summ="30000" data-delivery-condition="500000">
+								<span>30 000</span> р.
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								Итого к оплате:
+							</td>
+							<td class="val final_price">
+								<span>100 000</span> р.
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+			<form action="ajax/send_order.php" class="order">
+				<div class="block_title">
+					Ваши данные
+				</div>
+				<table>
+					<tr>
+						<td class="label">
+							Ваше имя:
+						</td>
+						<td class="val">
+							<input type="text" class="some_input">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Телефон:
+						</td>
+						<td class="val">
+							<input type="text" class="some_input">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							E-mail:
+						</td>
+						<td class="val">
+							<input type="text" class="some_input">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Адрес:
+						</td>
+						<td class="val">
+							<input type="text" class="some_input">
+						</td>
+					</tr>
+					<tr>
+						<td class="label other_field">
+							Примечание:
+						</td>
+						<td class="val"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea name="" id="" cols="" rows="" class="some_textarea"></textarea>
+						</td>
+					</tr>
+				</table>
+				<button class="some_btn">
+					ОФОРМИТЬ
+				</button>
+			</form>
+		</div>
+		 {% endblock %}
+  

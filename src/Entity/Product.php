@@ -80,7 +80,7 @@ class Product
      */
     private $mainImage;
 
-    public function getId(): ?int
+        public function getId(): ?int
     {
         return $this->id;
     }
@@ -173,6 +173,4 @@ class Product
         $this->mainImage = $mainImage;
     }
 
-
-
-}
+   }

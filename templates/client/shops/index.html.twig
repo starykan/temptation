@@ -21,8 +21,6 @@
                     <div class="shop_item">
 						<a href="#" class="image">
 							<span class="image_wr">
-							
-							{#	<img src="images/uploads/shop_image.jpg" alt="">#}
 					
 							{% if shop.getMainImage() %}
 								<img src="{{ shopManager.getImageFullUrl(shop.getMainImage()) }}" alt="">
@@ -55,108 +53,4 @@
                     </div>
                 {% endfor %}
    		    	
-{#			<div class="shop_item">
-				<a href="#" class="image">
-					<span class="image_wr">
-						<img src="images/uploads/shop_image.jpg" alt="">
-					</span>
-				</a>
-				<div class="info">
-					<a href="#" class="name">
-						ТЦ «Силуэт»
-					</a>
-					<div class="clearfloat"></div>
-					<div class="info_item">
-						<div class="label">
-							Адрес:
-						</div>
-						<div class="val">
-							г. Минск, ул. В. Хоружей, 1А.
-						</div>
-					</div>
-					<div class="info_item">
-						<div class="label">
-							Телефоны:
-						</div>
-						<div class="val">
-							( +375 44) 555 25 08 
-							<br>
-							( +375 44) 555 25 06
-							<br>
-							( +375 44) 555 25 07
-						</div>
-					</div>
-				</div>
-				<div class="clearfloat"></div>
-			</div>
-			<div class="shop_item">
-				<a href="#" class="image">
-					<span class="image_wr">
-						<img src="images/uploads/shop_image.jpg" alt="">
-					</span>
-				</a>
-				<div class="info">
-					<a href="#" class="name">
-						ТЦ «Силуэт»
-					</a>
-					<div class="clearfloat"></div>
-					<div class="info_item">
-						<div class="label">
-							Адрес:
-						</div>
-						<div class="val">
-							г. Минск, ул. В. Хоружей, 1А.
-						</div>
-					</div>
-					<div class="info_item">
-						<div class="label">
-							Телефоны:
-						</div>
-						<div class="val">
-							( +375 44) 555 25 08 
-							<br>
-							( +375 44) 555 25 06
-							<br>
-							( +375 44) 555 25 07
-						</div>
-					</div>
-				</div>
-				<div class="clearfloat"></div>
-			</div>
-			<div class="shop_item">
-				<a href="#" class="image">
-					<span class="image_wr">
-						<img src="images/uploads/shop_image.jpg" alt="">
-					</span>
-				</a>
-				<div class="info">
-					<a href="#" class="name">
-						ТЦ «Силуэт»
-					</a>
-					<div class="clearfloat"></div>
-					<div class="info_item">
-						<div class="label">
-							Адрес:
-						</div>
-						<div class="val">
-							г. Минск, ул. В. Хоружей, 1А.
-						</div>
-					</div>
-					<div class="info_item">
-						<div class="label">
-							Телефоны:
-						</div>
-						<div class="val">
-							( +375 44) 555 25 08 
-							<br>
-							( +375 44) 555 25 06
-							<br>
-							( +375 44) 555 25 07
-						</div>
-					</div>
-				</div>
-				<div class="clearfloat"></div>
-			</div>
-			<div class="clearfloat"></div>
-		</div>#}
    {% endblock %}
