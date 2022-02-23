@@ -112,59 +112,60 @@
             <div class="clearfloat"></div>
         </div>
         <div class="products" id="test">
-{#            <div class="item_sort">#}
-{#                <div class="label">#}
-{#                    Сортировать по:#}
-{#                </div>#}
-{#                <div class="select_list">#}
-{#                    <div class="current">#}
-{#                        Дате поступления#}
-{#                    </div>#}
-{#                    <ul class="list">#}
-{#                        <li class="single_filter" data-name="sort" data-id="31">#}
-{#                            Цене#}
-{#                        </li>#}
-{#                        <li class="single_filter" data-name="sort" data-id="32">#}
-{#                            Важности#}
-{#                        </li>#}
-{#                        <li class="single_filter" data-name="sort" data-id="33">#}
-{#                            Заслугам#}
-{#                        </li>#}
-{#                    </ul>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="item_sort">#}
-{#                <div class="label">#}
-{#                    Размер:#}
-{#                </div>#}
-{#                <div class="select_list">#}
-{#                    <div class="current">#}
-{#                        2B#}
-{#                    </div>#}
-{#                    <ul class="list">#}
-{#                        <li>#}
-{#                            <span class="check_element multi_filter" data-name="size" data-id="21">#}
-{#                                2A#}
-{#                            </span>#}
-{#                        </li>#}
-{#                        <li>
-{ #                        <span class="check_element multi_filter" data-name="size" data-id="22">
-{#                                  2B#}
-{#                              </span>#}
-{#                          </li>#}
-{#                          <li>#}
-{#                              <span class="check_element multi_filter" data-name="size" data-id="23">#}
-{#                                  2C#}
-{#                              </span>#}
-{#                          </li>#}
-{#                      </ul>#}
-{#                  </div>#}
-{#              </div>#}
-{#              <div class="clearfloat"></div>#}
-{#              <div class="products_list">#}
-{#                  <div class="sort_result">#}
-{#                      Найдено товаров: <span>49</span>#}
-{#             </div>#}
+{#           <div class="item_sort">
+                <div class="label">
+                    Сортировать по:
+                </div>
+                <div class="select_list">
+                    <div class="current">
+                        Дате поступления
+                    </div>
+                    <ul class="list">
+                        <li class="single_filter" data-name="sort" data-id="31">
+                            Цене
+                        </li>
+                        <li class="single_filter" data-name="sort" data-id="32">
+                            Важности
+                        </li>
+                        <li class="single_filter" data-name="sort" data-id="33">
+                            Заслугам
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item_sort">
+                <div class="label">
+                    Размер:
+                </div>
+                <div class="select_list">
+                    <div class="current">
+                        2B
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <span class="check_element multi_filter" data-name="size" data-id="21">
+                                2A
+                            </span>
+                        </li>
+                        <li>
+                        <span class="check_element multi_filter" data-name="size" data-id="22">
+                                  2B
+                              </span>
+                          </li>
+                          <li>
+                              <span class="check_element multi_filter" data-name="size" data-id="23">
+                                  2C
+                              </span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="clearfloat"></div>
+              <div class="products_list">
+                  <div class="sort_result">
+                      Найдено товаров: <span>49</span>
+             </div>#}
+             
                 {% for product in products %}
                     <div class="product_widget{% if loop.index % 3 == 0 %} last_in_line{% endif %}">
                         <a href="{{ path('client_product_index', {'id': product.id}) }}" class="link">

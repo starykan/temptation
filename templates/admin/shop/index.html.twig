@@ -7,7 +7,7 @@
     <table class="table">
         <thead>
             <tr>
-            	<th></th>
+            	<th>Pic</th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Adress</th>
@@ -20,11 +20,11 @@
         <tbody>
         {% for shop in shops %}
             <tr>
-           {# 	<td>
+           		<td>
                     {% if shop.getMainImage() %}
                         <img src="{{ shopManager.getImageFullUrl(shop.getMainImage()) }}"/>
                     {% endif %}
-                </td>#}
+                </td>
                 <td>{{ shop.id }}</td>
                 <td>{{ shop.name }}</td>
                 <td>{{ shop.adress }}</td>

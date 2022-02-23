@@ -3,69 +3,7 @@
 {% block title %}Temptation{% endblock %}
 
 {% block body %}
-{#    <div class="wrapper">#}
-{#        <header class="header">#}
-{#        	<div class="content">#}
-{#        		<a href="#" class="logo"></a>#}
-{#        		<table class="header_contacts">#}
-{#        			<tr>#}
-{#		            	<td class="key">#}
-{#		            		Тел.:#}
-{#		            	</td>#}
-{#		            	<td class="val">#}
-{#		            		(017) 286-30-71, 286-31-72#}
-{#		            	</td>#}
-{#		            </tr>#}
-{#		            <tr>#}
-{#		            	<td class="key">#}
-{#		            		Факс:#}
-{#		            	</td>#}
-{#		            	<td class="val">#}
-{#		            		(017) 286-31-72#}
-{#		            	</td>#}
-{#		            </tr>#}
-{#		            <tr>#}
-{#		            	<td class="key">#}
-{#		            		E-mail:#}
-{#		            	</td>#}
-{#		            	<td class="val">#}
-{#		            		info@temptation.by#}
-{#		            	</td>#}
-{#		            </tr>#}
-{#        		</table>#}
-{#        		<div class="cart_widget">#}
-{#        			<a href="#" class="cart_link"></a>#}
-{#        			<div class="cart_info">#}
-{#        				<div class="label">#}
-{#        					В корзине:#}
-{#        				</div>#}
-{#        				<div class="value">#}
-{#        					2 товара#}
-{#        					<br>#}
-{#        					1 400 000 р.#}
-{#        				</div>#}
-{#        			</div>#}
-{#        		</div>#}
-{#        		<div class="clearfloat"></div>#}
-{#        	</div>#}
-{#        </header>#}
-{#        <nav class="main_nav content">#}
-{#			<a href="#" class="catalog_link">#}
-{#				КАТАЛОГ#}
-{#			</a>#}
-{#			<a href="#">#}
-{#				НОВОСТИ#}
-{#			</a>#}
-{#			<a href="#">#}
-{#				НАШИ МАГАЗИНЫ#}
-{#			</a>#}
-{#			<a href="#">#}
-{#				СОТРУДНИЧЕСТВО#}
-{#			</a>#}
-{#			<a href="#">#}
-{#				О КОМПАНИИ#}
-{#			</a>#}
-{#		</nav>#}
+
 		<div class="page_with_side content">
 	<div class="side">
 		<form action="ajax/filter.php" class="filter_form"></form>
@@ -116,14 +54,14 @@
 				<div class="clearfloat"></div>
 				<div class="product_photo_widget">
 					<div class="big_img">
-						<img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" alt="">
+						<img src="{{ productManager.getImageFullUrl(product.getMainImage()) }}" width="350" height="350"  alt="">
 					</div>
 					<div class="clearfloat"></div>
 					{% for image in imageArray %}
 					<ul class="img_preview">
 						<li>
 							<a href="{{ productManager.getImageFullUrl(image) }}" {% if (image == product.getMainImage()) %}class="active"{% endif %}>
-								<img src="{{ productManager.getImageFullUrl(image) }}" alt="">
+								<img src="{{ productManager.getImageFullUrl(image) }}" width="74" height="74"  alt="">
 							</a>
 						</li>
 						{% else %}
@@ -181,18 +119,18 @@
 						</div>
 						<div class="clearfloat"></div>
 					</div>
-{# 					<div class="counter">#}
-{# 						<a href="#" class="minus">&ndash;</a>#}
-{#                            <input type="text" class="counter_input" name="count" value="1" readonly>#}
-{#                        <a href="#" class="plus">+</a>#}
-{#                        <div class="label">#}
-{#                        	Количество#}
-{#                        </div>#}
-{# 					</div>#}
-{# 					<div class="clearfloat"></div>#}
-{# 					<button class="some_btn" type="submit">#}
-{# 						ЗАКАЗАТЬ#}
-{# 					</button>#}
+ 					<div class="counter">
+ 						<a href="#" class="minus">&ndash;</a>
+                            <input type="text" class="counter_input" name="count" value="1" readonly>
+                        <a href="#" class="plus">+</a>
+                        <div class="label">
+                        	Количество
+                        </div>
+ 					</div>
+ 					<div class="clearfloat"></div>
+ 					<button class="some_btn" type="submit">
+ 						ЗАКАЗАТЬ
+ 					</button>
 				</form>
 				<div class="clearfloat"></div>
 			</div>
