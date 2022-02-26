@@ -74,7 +74,7 @@
 					{% endfor %}
 					<div class="clearfloat"></div>
 				</div>
-				<form action="ajax/add_cart.php" class="product_form">
+				<form action="/basket" class="product_form">
 					<div class="product_name">
 						{{product.name}}
 					</div>
@@ -86,7 +86,7 @@
 							{{product.content}}
 						</div>
 					</div>
-					<div class="size">
+{#					<div class="size">#}
 {#						<div class="label">#}
 {#							Размер:#}
 {#						</div>#}
@@ -108,7 +108,7 @@
 {#							</ul>#}
 {#						</div>#}
 {#						<	div class="clearfloat">#}
-					</div>
+{#					</div>#}
 					<div class="clearfloat"></div>
 					<div class="price">
 						<div class="value">
@@ -119,6 +119,7 @@
 						</div>
 						<div class="clearfloat"></div>
 					</div>
+					<input type="hidden" name="product_id"  value="{{ product.id }}" class="select_input">
  					<div class="counter">
  						<a href="#" class="minus">&ndash;</a>
                             <input type="text" class="counter_input" name="count" value="1" readonly>

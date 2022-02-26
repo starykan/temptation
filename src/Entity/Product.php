@@ -21,6 +21,7 @@ class Product
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(name="id", type="integer")
+     *@ORM\OneToMany(targetEntity="App\Entity\OrderProduct", mappedBy="productId")
      */
     private $id;
 

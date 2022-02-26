@@ -51,6 +51,12 @@ services:
             - '@Doctrine\ORM\EntityManagerInterface'
             - '@Symfony\Component\Routing\RouterInterface'
             - '%kernel.project_dir%/public/uploads'
+            
+    App\Manager\OrderManager:
+        class: App\Manager\OrderManager
+        arguments:
+            - '@Doctrine\ORM\EntityManagerInterface'
+            - '@Symfony\Component\Routing\RouterInterface'
 
     App\Security\AdminAuthenticator:
         class: App\Security\AdminAuthenticator

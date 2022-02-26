@@ -12,9 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Order
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @var int
+     * 
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(name="id",type="integer")
+     * @ORM\OneToMany(targetEntity="App\Entity\OrderProduct", mappedBy="orderId")
      */
     private $id;
 

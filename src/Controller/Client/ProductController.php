@@ -14,8 +14,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Product;
 
-
-
 class ProductController extends AbstractController
 {
     /**
@@ -27,7 +25,7 @@ class ProductController extends AbstractController
         ProductManager $productManager,
     	 int $id    	 
     ): Response {
-        $product = $productRepository->findById($id);
+    	$product = $productRepository->findById($id);
         $category = $product->getCategory();
         if (!$category) {
             throw $this->createNotFoundException();

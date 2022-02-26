@@ -1,14 +1,27 @@
 <?php
 
-$a = ['4','3','2','1'];
-$w = count($a);
-$e = $w-1;
-do
-            {
-                $x=0;
-                $s = array_shift($a);
-                $a [] = $s;
-                $x++;
-            }
-while ($x != $e);
-var_dump($a);
+use Symfony\Component\HttpFoundation\Session\Session;
+
+$session = new Session();
+$session->start();
+
+// устанавливать и получать атрибуты сессии
+$session->set('name', 'Drak');
+$session->get('name');
+
+// устанавливать флеш-сообщения
+$session->getFlashBag()->add('notice', 'Profile updated');
+
+// извлекать сообщения
+foreach ($session->getFlashBag()->get('notice', []) as $message) {
+	echo '<div class="flash-notice">'.$message.'</div>';}
+	
+	
+	$productList = [123 => 2];
+	$productIds = array_keys($productList);
+	$productEntitiesRaw = $repository->getByIds($productIds);
+	// $productEntities = [$productId => $productEntity]
+	foreach ($productList as $productId => $count) {
+		$product = $productEntities[$productId];
+		
+	}
