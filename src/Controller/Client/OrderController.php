@@ -12,17 +12,42 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Manager\OrderManager;
 use App\Entity\Product;
 use App\Repository\ProductRepository;
+use App\Manager\ProductManager;
 
 class OrderController extends AbstractController
 {
     /**
      * @Route("/order", name="client_order_index")
      */
-    public function index(Session $session)
+	public function index(OrderManager $orderManager,
+    											Session $session,
+									    		ProductRepository $productRepository,
+			                                    ProductManager $productManager)
     {
-    	
-        return $this->render('client/order/index.html.twig',[
-        	        		
+    	if (!$session) {
+    		$session = new Session();
+    		$session->start();
+    	}
+
+    	$rawOrder = $session -> all($session);
+    	$count = 0;
+    	$summ = 0;
+    	foreach ($rawOrder as $id =>$pieces)
+    	{
+    		$count += $pieces;
+    		$product = $productRepository->findById($id);
+    		$price = $product->getPrice();
+    		$summ+=$price * $pieces;
+    		$products []= $product;
+    	}
+    	        return $this->render('client/order/index.html.twig',[
+        		'product' => $product,
+    	        'pieces' => $pieces,
+    	        'price' => $price = $product->getPrice(),
+    	        'summ' => $summ,
+    	        'count' => $count,
+    	        'productManager' => $productManager,
+				'products' => $products,
         ]);
     }
     
@@ -30,28 +55,24 @@ class OrderController extends AbstractController
      * @Route("/basket", name="product_form")
      */
     public function basket(OrderManager $orderManager,
-    											   Session $session,
-    											   Product $product,
+    											   Session $session,									   
     											   ProductRepository $productRepository)
-    {
-    	
-    	$q = $orderManager->sessionWork($session);
-    	$q = $session -> all($session);
+    {	
+    	$rawOrder = $orderManager->sessionWork($session);
+    	$rawOrder = $session -> all($session);
     	$count = 0;
     	$summ = 0;
-    	foreach ($q as $k =>$v)
+    	foreach ($rawOrder as $id =>$pieces)
     	{
-    		$count += $v;
-    		$product = $productRepository->findById($k);
+    		$count += $pieces;
+    		$product = $productRepository->findById($id);
     		$price = $product->getPrice();
-    		$k = $price * $v;
-    		$summ+=$k;
+    		$summ+=$price * $pieces;
     	}
-    	
-    	$arr = [	'response' => true,
-		    			'redirectUrl'      => false,
-		    			'responseContent'  =>  $count . ' товара<br>'  . $summ . '  р.'
-    	];
-    	return new JsonResponse($arr);
+
+    	return new JsonResponse([	'response' => true,
+    			'redirectUrl'      => false,
+    			'responseContent'  =>  $count . ' товара<br>'  . $summ . '  р.'
+    	]);
     }
 }
