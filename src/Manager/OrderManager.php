@@ -19,4 +19,7 @@ class OrderManager {
 // 	function sessionSet(Session $session) {
 // 		$session->set($_POST['product_id'], $_POST['count']);
 // 		}
+
+	
+	
 }

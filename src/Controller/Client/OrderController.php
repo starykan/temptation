@@ -26,58 +26,54 @@ class OrderController extends AbstractController
 									    		ProductRepository $productRepository,
 			                                    ProductManager $productManager)
     {
-    	if(!$session){
-    		return $this->render('client/order/index.html.twig');
-//     	}else{
-//     	$session = new Session();
-//     	$session->start();
-//     	$rawOrder = $session -> get($id);
-//     	$count = 0;
-//     	$summ = 0;
-//     	foreach ($rawOrder as $id =>$pieces)
-//     	{
-//     		$product = $productRepository->findById($id);
-//     		$price = $product->getPrice();
-//     		$products []= $product;
-//     		$count += $pieces;
-//     		$summ+=$price * $pieces;
-//     	}
-//     	        return $this->render('client/order/index.html.twig',[
-//         		'product' => $product,
-//     	        'pieces' => $pieces,
-//     	        'price' => $price = $product->getPrice(),
-//     	        'summ' => $summ,
-//     	        'count' => $count,
-//     	        'productManager' => $productManager,
-// 				'products' => $products,
-//         ]);
+		if()
+    	$orderManager->sessionStart;
+    	$rawOrder = $session -> get($id);
+    	$count = 0;
+    	$summ = 0;
+    	foreach ($rawOrder as $id =>$pieces)
+    	{
+    		$product = $productRepository->findById($id);
+    		$price = $product->getPrice();
+    		$products []= $product;
+    		$count += $pieces;
+    		$summ+=$price * $pieces;
     	}
+    	        return $this->render('client/order/index.html.twig',[
+        		'product' => $product,
+    	        'pieces' => $pieces,
+    	        'price' => $price = $product->getPrice(),
+    	        'summ' => $summ,
+    	        'count' => $count,
+    	        'productManager' => $productManager,
+				'products' => $products,
+        ]);
     }
-}
-//     /**
-//      * @Route("/basket", name="product_form")
-//      */
-//     public function basket(OrderManager $orderManager,
-//     											   Session $session,									   
-//     											   ProductRepository $productRepository)
-//     {	
-//     	$rawOrder = $orderManager->sessionWork($session);
-//     	$rawOrder = $session -> all($session);
-//     	$count = 0;
-//     	$summ = 0;
-//     	foreach ($rawOrder as $id =>$pieces)
-//     	{
-//     		$count += $pieces;
-//     		$product = $productRepository->findById($id);
-//     		$price = $product->getPrice();
-//     		$summ+=$price * $pieces;
-//     	}
+    
+    /**
+     * @Route("/basket", name="product_form")
+     */
+    public function basket(OrderManager $orderManager,
+    											   Session $session,									   
+    											   ProductRepository $productRepository)
+    {	
+    	$rawOrder = $orderManager->sessionWork($session);
+    	$rawOrder = $session -> all($session);
+    	$count = 0;
+    	$summ = 0;
+    	foreach ($rawOrder as $id =>$pieces)
+    	{
+    		$count += $pieces;
+    		$product = $productRepository->findById($id);
+    		$price = $product->getPrice();
+    		$summ+=$price * $pieces;
+    	}
 
-//     	return new JsonResponse([	'response' => true,
-//     			'redirectUrl'      => false,
-//     			'responseContent'  =>  $count . ' товара<br>'  . $summ . '  р.'
-//     	]);
-//     }
+    	return new JsonResponse([	'response' => true,
+    			'redirectUrl'      => false,
+    			'responseContent'  =>  $count . ' товара<br>'  . $summ . '  р.'
+    	]);
+    }
     
 //     public function new(Request $request): Response
 //     {
@@ -105,4 +101,4 @@ class OrderController extends AbstractController
 //     							  'responseContent'  => ' ');
 //     echo json_encode($array);
     
-// }
+}
