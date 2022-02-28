@@ -57,6 +57,14 @@ services:
         arguments:
             - '@Doctrine\ORM\EntityManagerInterface'
             - '@Symfony\Component\Routing\RouterInterface'
+            
+    App\Twig\BasketExtension:
+        class: App\Twig\BasketExtension
+        arguments: 
+            - '@App\Manager\OrderManager'
+            - '@Symfony\Component\HttpFoundation\Session\SessionInterface'
+            - '@App\Repository\ProductRepository'
+        tags: [{'name': 'twig.extension'}]
 
     App\Security\AdminAuthenticator:
         class: App\Security\AdminAuthenticator

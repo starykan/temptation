@@ -20,6 +20,7 @@ class ProductType extends AbstractType
             ->add('category')
             ->add('uploadedImages', FileType::class, [
                 'multiple' => true,
+            	'required' => false,
                 'attr' => [
                     'accept' => 'image/*',
                     'multiple' => 'multiple'

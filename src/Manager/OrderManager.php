@@ -9,18 +9,14 @@ use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class OrderManager {
-	function sessionWork(Session $session) {
+// 	function sessionStart(Session $session) {
 		
-		if (!$session) {
-			$session = new Session();
-			$session->start();
-			$session->set($_POST['product_id'], $_POST['count']);
-		}else {
-			$session->set($_POST['product_id'], $_POST['count']);
-		}
-		}
+// 		if (!$session) {
+// 			$session = new Session();
+// 			$session->start();
+// 		}}
 	
-	function countSumm(Session $session) {
-		;
-	}
+// 	function sessionSet(Session $session) {
+// 		$session->set($_POST['product_id'], $_POST['count']);
+// 		}
 }
